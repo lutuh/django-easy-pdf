@@ -58,7 +58,7 @@ def html_to_pdf(content, encoding="utf-8",
     :rtype: :class:`bytes`
     :raises: :exc:`~easy_pdf.exceptions.PDFRenderingError`
     """
-    src = BytesIO(content)
+    src = BytesIO(content.encode(encoding))
     dest = BytesIO()
 
     pdf = pisa.pisaDocument(src, dest, encoding=encoding,
